@@ -1,0 +1,24 @@
+@import "assets/styles/_variables.scss";
+@import "assets/styles/_typography.scss";
+@import "assets/styles/_header.scss";
+@import "assets/styles/_calculator-body.scss";
+@import "assets/styles/_button.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5%;
+  font-family: $primary-font;
+}
+
+main {
+  padding: 50px 15px;
+}

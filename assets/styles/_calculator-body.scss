@@ -1,0 +1,107 @@
+@import "./variables.scss";
+@import "./_typography.scss";
+
+.calculator {
+  margin: auto;
+  border-radius: 20px;
+  width: 90%;
+  height: 60vh;
+  background-color: rgba(60, 60, 60, 1);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  &__screen {
+    padding: 20px;
+    height: 40%;
+    background-color: #f8f8ff;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    &__output-previous {
+      font-size: 1.6rem;
+      padding-right: 5px;
+    }
+    &__output-current {
+      font-size: 2rem;
+      padding-right: 5px;
+    }
+  }
+  &__buttons {
+    height: 60%;
+    padding: 20px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "clear clear percent divide"
+      "seven eight nine times"
+      "four five six minus"
+      "one two three plus"
+      ". zero decimal equals";
+    #percent {
+      grid-area: percent;
+    }
+    #clear {
+      grid-area: clear;
+      color: $btn-alt-color;
+    }
+    #divide {
+      grid-area: divide;
+    }
+    #times {
+      grid-area: times;
+    }
+    #minus {
+      grid-area: minus;
+    }
+    #plus {
+      grid-area: plus;
+    }
+    #equals {
+      grid-area: equals;
+      color: $btn-alt-color;
+    }
+    #decimal {
+      grid-area: decimal;
+    }
+    #zero {
+      grid-area: zero;
+    }
+    #one {
+      grid-area: one;
+    }
+    #two {
+      grid-area: two;
+    }
+    #three {
+      grid-area: three;
+    }
+    #four {
+      grid-area: four;
+    }
+    #five {
+      grid-area: five;
+    }
+    #six {
+      grid-area: six;
+    }
+    #seven {
+      grid-area: seven;
+    }
+    #eight {
+      grid-area: eight;
+    }
+    #nine {
+      grid-area: nine;
+    }
+  }
+}
+
+#js-logo {
+  color: $btn-alt-color;
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
+}

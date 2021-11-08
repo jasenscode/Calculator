@@ -1,0 +1,138 @@
+.header {
+  padding: 50px 15px;
+}
+.header__title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: #3c3c3c;
+}
+
+.calculator {
+  margin: auto;
+  border-radius: 20px;
+  width: 90%;
+  height: 60vh;
+  background-color: #3c3c3c;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.calculator__screen {
+  padding: 20px;
+  height: 40%;
+  background-color: #f8f8ff;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.calculator__screen__output-previous {
+  font-size: 1.6rem;
+  padding-right: 5px;
+}
+.calculator__screen__output-current {
+  font-size: 2rem;
+  padding-right: 5px;
+}
+.calculator__buttons {
+  height: 60%;
+  padding: 20px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "clear clear percent divide" "seven eight nine times" "four five six minus" "one two three plus" ". zero decimal equals";
+}
+.calculator__buttons #percent {
+  grid-area: percent;
+}
+.calculator__buttons #clear {
+  grid-area: clear;
+  color: #f8a408;
+}
+.calculator__buttons #divide {
+  grid-area: divide;
+}
+.calculator__buttons #times {
+  grid-area: times;
+}
+.calculator__buttons #minus {
+  grid-area: minus;
+}
+.calculator__buttons #plus {
+  grid-area: plus;
+}
+.calculator__buttons #equals {
+  grid-area: equals;
+  color: #f8a408;
+}
+.calculator__buttons #decimal {
+  grid-area: decimal;
+}
+.calculator__buttons #zero {
+  grid-area: zero;
+}
+.calculator__buttons #one {
+  grid-area: one;
+}
+.calculator__buttons #two {
+  grid-area: two;
+}
+.calculator__buttons #three {
+  grid-area: three;
+}
+.calculator__buttons #four {
+  grid-area: four;
+}
+.calculator__buttons #five {
+  grid-area: five;
+}
+.calculator__buttons #six {
+  grid-area: six;
+}
+.calculator__buttons #seven {
+  grid-area: seven;
+}
+.calculator__buttons #eight {
+  grid-area: eight;
+}
+.calculator__buttons #nine {
+  grid-area: nine;
+}
+
+#js-logo {
+  color: #f8a408;
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.button {
+  border-radius: 5px;
+  border: none;
+  font-family: "Mohave", sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #3c3c3c;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to top, #c0c0aa, #1cefff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 5%;
+  font-family: "Mohave", sans-serif;
+}
+
+main {
+  padding: 50px 15px;
+}
