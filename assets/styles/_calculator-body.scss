@@ -1,16 +1,18 @@
-@import "./variables.scss";
-@import "./_typography.scss";
+@import './variables.scss';
+@import './_typography.scss';
 
 .calculator {
   margin: auto;
   border-radius: 20px;
   width: 90%;
-  height: 60vh;
+  height: 60vh; //prev 60
   background-color: rgba(60, 60, 60, 1);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   &__screen {
     padding: 20px;
     height: 40%;
+    max-width: 100%;
     background-color: #f8f8ff;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -35,11 +37,11 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas:
-      "clear clear percent divide"
-      "seven eight nine times"
-      "four five six minus"
-      "one two three plus"
-      ". zero decimal equals";
+      'clear clear percent divide'
+      'seven eight nine times'
+      'four five six minus'
+      'one two three plus'
+      '. zero decimal equals';
     #percent {
       grid-area: percent;
     }
@@ -104,4 +106,52 @@
   font-size: 1.5rem;
   justify-self: center;
   align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .calculator {
+    width: 80%;
+    &__screen {
+      &__output-previous {
+        font-size: 2.2rem;
+        padding-right: 5px;
+      }
+      &__output-current {
+        font-size: 3.2rem;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .calculator {
+    width: 20%;
+    &__screen {
+      &__output-previous {
+        font-size: 1.4rem;
+        padding-right: 5px;
+      }
+      &__output-current {
+        font-size: 2rem;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .calculator {
+    width: 23%;
+    &__screen {
+      &__output-previous {
+        font-size: 2.2rem;
+        padding-right: 5px;
+      }
+      &__output-current {
+        font-size: 3.2rem;
+        padding-right: 5px;
+      }
+    }
+  }
 }

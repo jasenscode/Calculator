@@ -1,8 +1,8 @@
-@import "assets/styles/_variables.scss";
-@import "assets/styles/_typography.scss";
-@import "assets/styles/_header.scss";
-@import "assets/styles/_calculator-body.scss";
-@import "assets/styles/_button.scss";
+@import 'assets/styles/_variables.scss';
+@import 'assets/styles/_typography.scss';
+@import 'assets/styles/_header.scss';
+@import 'assets/styles/_calculator-body.scss';
+@import 'assets/styles/_button.scss';
 
 * {
   margin: 0;
@@ -20,5 +20,11 @@ body {
 }
 
 main {
-  padding: 50px 15px;
+  padding: 25px 15px;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 25px;
+  }
 }
