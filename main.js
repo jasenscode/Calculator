@@ -91,8 +91,15 @@ equalsBtn.addEventListener('click', finalOutput);
 
 // add percent number functionality
 percentBtn.addEventListener('click', () => {
-  result = result / 100;
-  currentScreenOutput.innerHTML = result;
+  if (firstNumber != typeof Number) {
+    result = parseInt(currentScreenOutput.innerHTML) / 100;
+    console.log(result);
+    currentScreenOutput.innerHTML = result;
+    parseInt(currentScreenOutput.innerHTML) / 100;
+  } else if (result === typeof Number) {
+    result = result / 100;
+    currentScreenOutput.innerHTML = result;
+  }
 });
 
 // clear/reset function
@@ -102,6 +109,7 @@ const clearAll = () => {
   previousScreenOutput.innerHTML = '';
   firstNumber = '';
   secondNumber = '';
+  result = '';
   percentResult = '';
 };
 
