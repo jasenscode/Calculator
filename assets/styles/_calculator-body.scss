@@ -38,10 +38,17 @@
     grid-template-rows: repeat(5, 1fr);
     grid-template-areas:
       'clear clear percent divide'
-      'seven eight nine times'
+      'seven eight nine multiply'
       'four five six minus'
       'one two three plus'
-      '. zero decimal equals';
+      'js zero decimal equals';
+    #js-logo {
+      color: $btn-alt-color;
+      font-size: 1.5rem;
+      justify-self: center;
+      align-self: center;
+      grid-area: js;
+    }
     #percent {
       grid-area: percent;
     }
@@ -52,8 +59,8 @@
     #divide {
       grid-area: divide;
     }
-    #times {
-      grid-area: times;
+    #multiply {
+      grid-area: multiply;
     }
     #minus {
       grid-area: minus;
@@ -101,11 +108,8 @@
   }
 }
 
-#js-logo {
+.toggleBtnColor {
   color: $btn-alt-color;
-  font-size: 1.5rem;
-  justify-self: center;
-  align-self: center;
 }
 
 @media screen and (min-width: 768px) {

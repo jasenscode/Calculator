@@ -34,13 +34,13 @@ let secondNumber;
 // Final result variable
 let result;
 
-// Variable to store result as percentage
+// Variable to store final result as percentage
 let percentResult;
 
-// when number button is pressed, update currentScreenOutput
-
+// when number button is pressed, update primary display on screen
 numberBtns.forEach((button) => {
   button.addEventListener('click', () => {
+    // button.classList.add('toggleBtnColor');
     let number = button.value;
     currentScreenOutput.innerHTML += number;
   });
@@ -52,39 +52,37 @@ operatorBtns.forEach((button) => {
     firstNumber = parseFloat(currentScreenOutput.innerHTML);
     previousScreenOutput.innerHTML = firstNumber;
     currentScreenOutput.innerHTML = '';
+    operator = button.value;
+    console.log(firstNumber);
+    console.log(operator);
   });
 });
 
-// // Operator functions
+// Function to calculate equation of two number variables that equals event listener can call on
 
-// const addNumber = () => {
-//   firstNumber + secondNumber;
-// };
-
-// const subtractNumber = () => {
-//   firstNumber - secondNumber;
-// };
-
-// const multiplyNumber = () => {
-//   firstNumber * secondNumber;
-// };
-
-// const divideNumber = () => {
-//   firstNumber / secondNumber;
-// };
-
-// when you press equals, the second number is stored in secondNumber and a function is called
-equalsBtn.addEventListener('click', () =>{
+const calculateResult = () => {
   secondNumber = parseFloat(currentScreenOutput.innerHTML);
-  result = firstNumber + secondNumber
-  currentScreenOutput.innerHTML = result
-})
+  console.log(firstNumber, secondNumber);
+  if (operator === '+') {
+    result = firstNumber + secondNumber;
+  } else if (operator === '-') {
+    result = firstNumber - secondNumber;
+  } else if (operator === 'x') {
+    result = firstNumber * secondNumber;
+  } else if (operator === '/') {
+    result = firstNumber / secondNumber;
+  }
+  currentScreenOutput.innerHTML = result;
+};
+
+// when you press equals, the second number is stored in secondNumber and a function is called to calculate the final result
+equalsBtn.addEventListener('click', calculateResult);
 
 // add percent number functionality
-percentBtn.addEventListener('click', () =>{
-  percentResult = result / 100;
-  currentScreenOutput.innerHTML = percentResult
-})
+percentBtn.addEventListener('click', () => {
+  result = result / 100;
+  currentScreenOutput.innerHTML = result;
+});
 
 // clear/reset function
 

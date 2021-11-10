@@ -51,7 +51,14 @@
   gap: 5px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: "clear clear percent divide" "seven eight nine times" "four five six minus" "one two three plus" ". zero decimal equals";
+  grid-template-areas: "clear clear percent divide" "seven eight nine multiply" "four five six minus" "one two three plus" "js zero decimal equals";
+}
+.calculator__buttons #js-logo {
+  color: #f8a408;
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
+  grid-area: js;
 }
 .calculator__buttons #percent {
   grid-area: percent;
@@ -63,8 +70,8 @@
 .calculator__buttons #divide {
   grid-area: divide;
 }
-.calculator__buttons #times {
-  grid-area: times;
+.calculator__buttons #multiply {
+  grid-area: multiply;
 }
 .calculator__buttons #minus {
   grid-area: minus;
@@ -108,13 +115,6 @@
 }
 .calculator__buttons #nine {
   grid-area: nine;
-}
-
-#js-logo {
-  color: #f8a408;
-  font-size: 1.5rem;
-  justify-self: center;
-  align-self: center;
 }
 
 @media screen and (min-width: 768px) {
