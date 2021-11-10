@@ -58,25 +58,34 @@ operatorBtns.forEach((button) => {
   });
 });
 
-// Function to calculate equation of two number variables that equals event listener can call on
+// Function just to calculate equation of two number variables
 
 const calculateResult = () => {
-  secondNumber = parseFloat(currentScreenOutput.innerHTML);
-  console.log(firstNumber, secondNumber);
   if (operator === '+') {
-    result = firstNumber + secondNumber;
+    return firstNumber + secondNumber;
   } else if (operator === '-') {
-    result = firstNumber - secondNumber;
+    return firstNumber - secondNumber;
   } else if (operator === 'x') {
-    result = firstNumber * secondNumber;
+    return firstNumber * secondNumber;
   } else if (operator === '/') {
-    result = firstNumber / secondNumber;
+    return firstNumber / secondNumber;
   }
-  currentScreenOutput.innerHTML = result;
+};
+
+// Function for equals button event listener to call on that assigns result of equation to result variable and updates display
+
+const finalOutput = () => {
+  secondNumber = parseFloat(currentScreenOutput.innerHTML);
+  result = calculateResult();
+  if (result % 1 != 0) {
+    currentScreenOutput.innerHTML = result.toFixed(4);
+  } else {
+    currentScreenOutput.innerHTML = result;
+  }
 };
 
 // when you press equals, the second number is stored in secondNumber and a function is called to calculate the final result
-equalsBtn.addEventListener('click', calculateResult);
+equalsBtn.addEventListener('click', finalOutput);
 
 // add percent number functionality
 percentBtn.addEventListener('click', () => {
