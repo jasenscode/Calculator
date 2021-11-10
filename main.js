@@ -17,33 +17,25 @@ const clearBtn = document.querySelector('.clear');
 const percentBtn = document.querySelector('.percent');
 const equalsBtn = document.querySelector('.equals');
 const decimalBtn = document.querySelector('.decimal');
+const plusBtn = document.querySelector('#plus');
+const minusBtn = document.querySelector('#minus');
+const multiplyBtn = document.querySelector('#multiply');
+const divideBtn = document.querySelector('#divide');
 
-// Operator functions
-// Can pass these into array.reduce as an argument
-
-const addNumber = () => {
-  previousNumber + currentNumber;
-};
-
-const subtractNumber = () => {
-  previousNumber - currentNumber;
-};
-
-const multiplyNumber = () => {
-  previousNumber * currentNumber;
-};
-
-const divideNumber = () => {
-  previousNumber / currentNumber;
-};
+// operator variable
+let operator;
 
 // Variable to store the number before operator button is pressed
-let currentNumber;
+let firstNumber;
 
-// Variable to store currentNumber after operator button has been pressed
-let previousNumber;
+// Variable to store firstNumber after operator button has been pressed
+let secondNumber;
 
-// // Initially display will show zero as starting point
+// Final result variable
+let result;
+
+// Variable to store result as percentage
+let percentResult;
 
 // when number button is pressed, update currentScreenOutput
 
@@ -54,18 +46,54 @@ numberBtns.forEach((button) => {
   });
 });
 
-// add above value to an array when operator is pressed
+// add first number input to secondNumber variable, clear currentScreen and display on previousScreen
 operatorBtns.forEach((button) => {
   button.addEventListener('click', () => {
-    previousNumber = parseInt(currentScreenOutput.innerHTML);
-    previousScreenOutput.innerHTML = previousNumber;
+    firstNumber = parseFloat(currentScreenOutput.innerHTML);
+    previousScreenOutput.innerHTML = firstNumber;
+    currentScreenOutput.innerHTML = '';
   });
 });
 
-// clear/reset function
+// // Operator functions
 
-// const clearAll = () => {
-//   currentScreenOutput.innerHTML = 0;
+// const addNumber = () => {
+//   firstNumber + secondNumber;
 // };
 
-// clearBtn.addEventListener('click', clearAll);
+// const subtractNumber = () => {
+//   firstNumber - secondNumber;
+// };
+
+// const multiplyNumber = () => {
+//   firstNumber * secondNumber;
+// };
+
+// const divideNumber = () => {
+//   firstNumber / secondNumber;
+// };
+
+// when you press equals, the second number is stored in secondNumber and a function is called
+equalsBtn.addEventListener('click', () =>{
+  secondNumber = parseFloat(currentScreenOutput.innerHTML);
+  result = firstNumber + secondNumber
+  currentScreenOutput.innerHTML = result
+})
+
+// add percent number functionality
+percentBtn.addEventListener('click', () =>{
+  percentResult = result / 100;
+  currentScreenOutput.innerHTML = percentResult
+})
+
+// clear/reset function
+
+const clearAll = () => {
+  currentScreenOutput.innerHTML = '';
+  previousScreenOutput.innerHTML = '';
+  firstNumber = '';
+  secondNumber = '';
+  percentResult = '';
+};
+
+clearBtn.addEventListener('click', clearAll);
