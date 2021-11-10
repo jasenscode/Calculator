@@ -53,8 +53,6 @@ operatorBtns.forEach((button) => {
     previousScreenOutput.innerHTML = firstNumber;
     currentScreenOutput.innerHTML = '';
     operator = button.value;
-    console.log(firstNumber);
-    console.log(operator);
   });
 });
 
@@ -69,6 +67,8 @@ const calculateResult = () => {
     return firstNumber * secondNumber;
   } else if (operator === '/') {
     return firstNumber / secondNumber;
+  } else {
+    console.error('No operator selected');
   }
 };
 
@@ -79,8 +79,10 @@ const finalOutput = () => {
   result = calculateResult();
   if (result % 1 != 0) {
     currentScreenOutput.innerHTML = result.toFixed(4);
-  } else {
+  } else if (result % 1 === 0) {
     currentScreenOutput.innerHTML = result;
+  } else {
+    console.error('No operator selected');
   }
 };
 

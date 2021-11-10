@@ -26,6 +26,12 @@ main {
 
 @media screen and (min-width: 1024px) {
   body {
+    padding: 0px 25px 25px 25px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
     padding: 25px;
   }
 }
