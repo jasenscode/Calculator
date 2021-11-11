@@ -1,6 +1,6 @@
 'use strict';
 
-// DOM captute variables
+// Capture DOM elements in variables
 const currentScreenOutput = document.querySelector(
   '.calculator__screen__output-current'
 );
@@ -26,7 +26,7 @@ let secondNumber;
 // Final result variable
 let result;
 
-// when number button is pressed, update primary display on screen
+// When number button is pressed, update primary display on screen
 numberBtns.forEach((button) => {
   button.addEventListener('click', () => {
     // button.classList.add('toggleBtnColor');
@@ -35,7 +35,7 @@ numberBtns.forEach((button) => {
   });
 });
 
-// add first number input to secondNumber variable, clear currentScreen and display on previousScreen
+// Store first number input to into a variable, clear currentScreen and display on previousScreen. Also capture the value of the operator button that was pressed
 operatorBtns.forEach((button) => {
   button.addEventListener('click', () => {
     if (currentScreenOutput.innerHTML === '') {
@@ -49,7 +49,7 @@ operatorBtns.forEach((button) => {
   });
 });
 
-// Function just to calculate equation of two number variables
+// Function to calculate equation of the two number variables
 const calculateResult = () => {
   if (operator === '+') {
     return firstNumber + secondNumber;
@@ -64,7 +64,7 @@ const calculateResult = () => {
   }
 };
 
-// Function for equals button click event listener to call on, which assigns result of equation to result variable and updates display
+// Function for equals button click event listener to call on, which assigns the second number to a variable, stores the result of equation into a variable and updates display to show the answer to equation. This is done by calling the calculateResult function
 const finalOutput = () => {
   secondNumber = parseFloat(currentScreenOutput.innerHTML);
   result = calculateResult();
@@ -77,22 +77,21 @@ const finalOutput = () => {
   }
 };
 
-// when equals button is pressed, the second number is stored in secondNumber and a function is called to calculate the final result
+// Equals button click event listener will invoke the finalOutput function above
 equalsBtn.addEventListener('click', finalOutput);
 
-// add percent number functionality
+// Click even listener to convert number to a percentage
 percentBtn.addEventListener('click', () => {
   if (firstNumber != typeof Number) {
     result = currentScreenOutput.innerHTML / 100;
     currentScreenOutput.innerHTML = result;
-    parseInt(currentScreenOutput.innerHTML) / 100;
   } else if (result === typeof Number) {
     result = result / 100;
     currentScreenOutput.innerHTML = result;
   }
 });
 
-// clear/reset function
+// Clear/reset function
 const clearAll = () => {
   currentScreenOutput.innerHTML = '';
   previousScreenOutput.innerHTML = '';
