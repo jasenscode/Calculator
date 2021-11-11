@@ -7,17 +7,12 @@ const currentScreenOutput = document.querySelector(
 const previousScreenOutput = document.querySelector(
   '.calculator__screen__output-previous'
 );
-const allBtns = document.querySelectorAll('.button');
 const numberBtns = document.querySelectorAll('.number');
 const operatorBtns = document.querySelectorAll('.operator');
 const clearBtn = document.querySelector('.clear');
 const percentBtn = document.querySelector('.percent');
 const equalsBtn = document.querySelector('.equals');
 const decimalBtn = document.querySelector('.decimal');
-const plusBtn = document.querySelector('#plus');
-const minusBtn = document.querySelector('#minus');
-const multiplyBtn = document.querySelector('#multiply');
-const divideBtn = document.querySelector('#divide');
 
 // Variable to capture operator when pressed
 let operator;
@@ -30,9 +25,6 @@ let secondNumber;
 
 // Final result variable
 let result;
-
-// Variable to store final result as percentage
-let percentResult;
 
 // when number button is pressed, update primary display on screen
 numberBtns.forEach((button) => {
@@ -107,7 +99,6 @@ const clearAll = () => {
   firstNumber = '';
   secondNumber = '';
   result = '';
-  percentResult = '';
 };
 
 clearBtn.addEventListener('click', clearAll);
