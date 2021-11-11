@@ -1,15 +1,12 @@
 'use strict';
 
 // DOM captute variables
-
 const currentScreenOutput = document.querySelector(
   '.calculator__screen__output-current'
 );
-
 const previousScreenOutput = document.querySelector(
   '.calculator__screen__output-previous'
 );
-
 const allBtns = document.querySelectorAll('.button');
 const numberBtns = document.querySelectorAll('.number');
 const operatorBtns = document.querySelectorAll('.operator');
@@ -22,7 +19,7 @@ const minusBtn = document.querySelector('#minus');
 const multiplyBtn = document.querySelector('#multiply');
 const divideBtn = document.querySelector('#divide');
 
-// operator variable
+// Variable to capture operator when pressed
 let operator;
 
 // Variable to store the number before operator button is pressed
@@ -49,15 +46,18 @@ numberBtns.forEach((button) => {
 // add first number input to secondNumber variable, clear currentScreen and display on previousScreen
 operatorBtns.forEach((button) => {
   button.addEventListener('click', () => {
-    firstNumber = parseFloat(currentScreenOutput.innerHTML);
-    previousScreenOutput.innerHTML = firstNumber;
-    currentScreenOutput.innerHTML = '';
-    operator = button.value;
+    if (currentScreenOutput.innerHTML === '') {
+      console.error('You must type in a number');
+    } else {
+      firstNumber = parseFloat(currentScreenOutput.innerHTML);
+      previousScreenOutput.innerHTML = firstNumber;
+      currentScreenOutput.innerHTML = '';
+      operator = button.value;
+    }
   });
 });
 
 // Function just to calculate equation of two number variables
-
 const calculateResult = () => {
   if (operator === '+') {
     return firstNumber + secondNumber;
@@ -72,8 +72,7 @@ const calculateResult = () => {
   }
 };
 
-// Function for equals button event listener to call on that assigns result of equation to result variable and updates display
-
+// Function for equals button click event listener to call on, which assigns result of equation to result variable and updates display
 const finalOutput = () => {
   secondNumber = parseFloat(currentScreenOutput.innerHTML);
   result = calculateResult();
@@ -86,14 +85,13 @@ const finalOutput = () => {
   }
 };
 
-// when you press equals, the second number is stored in secondNumber and a function is called to calculate the final result
+// when equals button is pressed, the second number is stored in secondNumber and a function is called to calculate the final result
 equalsBtn.addEventListener('click', finalOutput);
 
 // add percent number functionality
 percentBtn.addEventListener('click', () => {
   if (firstNumber != typeof Number) {
-    result = parseInt(currentScreenOutput.innerHTML) / 100;
-    console.log(result);
+    result = currentScreenOutput.innerHTML / 100;
     currentScreenOutput.innerHTML = result;
     parseInt(currentScreenOutput.innerHTML) / 100;
   } else if (result === typeof Number) {
@@ -103,7 +101,6 @@ percentBtn.addEventListener('click', () => {
 });
 
 // clear/reset function
-
 const clearAll = () => {
   currentScreenOutput.innerHTML = '';
   previousScreenOutput.innerHTML = '';
