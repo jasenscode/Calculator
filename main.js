@@ -20,7 +20,7 @@ let operator;
 // Variable to store the number before operator button is pressed
 let firstNumber;
 
-// Variable to store firstNumber after operator button has been pressed
+// Variable to store second number after equals operator button has been pressed
 let secondNumber;
 
 // Final result variable
