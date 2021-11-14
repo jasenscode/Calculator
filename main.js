@@ -98,6 +98,7 @@ const clearAll = () => {
   firstNumber = '';
   secondNumber = '';
   result = '';
+  operator = '';
 };
 
 clearBtn.addEventListener('click', clearAll);
