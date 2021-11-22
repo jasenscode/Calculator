@@ -1,5 +1,4 @@
 # Calculator
-__________
 
 This is a simple calculator made using vanilla JavaScript that I built in the third week of the _nology bootcamp.
 
