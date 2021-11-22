@@ -42,9 +42,10 @@ operatorBtns.forEach((button) => {
       console.error('You must type in a number');
     } else {
       firstNumber = parseFloat(currentScreenOutput.innerHTML);
-      previousScreenOutput.innerHTML = firstNumber;
-      currentScreenOutput.innerHTML = '';
       operator = button.value;
+      previousScreenOutput.innerHTML = firstNumber + operator;
+      currentScreenOutput.innerHTML = '';
+      // operator = button.value;
     }
   });
 });
@@ -67,6 +68,7 @@ const calculateResult = () => {
 // Function for equals button click event listener to call on, which assigns the second number to a variable, stores the result of equation into a variable and updates display to show the answer to equation. This is done by calling the calculateResult function
 const finalOutput = () => {
   secondNumber = parseFloat(currentScreenOutput.innerHTML);
+  previousScreenOutput.innerHTML = firstNumber + operator + secondNumber;
   result = calculateResult();
   if (result % 1 != 0) {
     currentScreenOutput.innerHTML = result.toFixed(4);
