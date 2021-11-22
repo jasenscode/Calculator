@@ -2,14 +2,14 @@
 
 This is a simple calculator made using vanilla JavaScript that I built in the third week of the _nology bootcamp.
 
-
+[Check the live demo here!](https://jasenscode.github.io/Calculator/)
 
 ____________
 ### Technologies
 
 - HTML5
 - SCSS
-- JavaScript ES6
+- JavaScript
 
 _____
 ### About
