@@ -1,19 +1,18 @@
-Calculator
-__________
+# Calculator
 
 This is a simple calculator made using vanilla JavaScript that I built in the third week of the _nology bootcamp.
 
+[Check the live demo here!](https://jasenscode.github.io/Calculator/)
 
-Technologies
 ____________
+### Technologies
 
 - HTML5
 - SCSS
-- JavaScript ES6
+- JavaScript
 
-
-About
 _____
+### About
 
 The requirement of this project was to make a working calculator to test my understanding of the concepts learnt on the course so far. The main aim was to demonstrate JavaScript knowledge by applying it to a real project with a limited brief, which encouraged us to complete the task in our own ways and encourage us to find solutions to queries and issues ourselves.
 
