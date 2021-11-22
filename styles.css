@@ -36,7 +36,6 @@
 .calculator__screen {
   padding: 20px;
   height: 40%;
-  max-width: 100%;
   background-color: #f8f8ff;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
@@ -64,7 +63,6 @@
 }
 .calculator__buttons #js-logo {
   color: #f8a408;
-  font-size: 1.5rem;
   justify-self: center;
   align-self: center;
   grid-area: js;
@@ -128,7 +126,7 @@
 
 @media screen and (min-width: 768px) {
   .calculator {
-    width: 80%;
+    width: 70%;
   }
   .calculator__screen__output-previous {
     font-size: 2.6rem;
@@ -141,7 +139,7 @@
 }
 @media screen and (min-width: 1024px) {
   .calculator {
-    width: 21%;
+    width: 60%;
   }
   .calculator__screen__output-previous {
     font-size: 2rem;
@@ -175,6 +173,16 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
+@media screen and (min-width: 768px) {
+  .button {
+    font-size: 1.9rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .button {
+    font-size: 2.2rem;
+  }
+}
 @media screen and (min-width: 1440px) {
   .button {
     font-size: 2rem;

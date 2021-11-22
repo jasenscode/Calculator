@@ -11,7 +11,6 @@
   &__screen {
     padding: 20px;
     height: 40%;
-    max-width: 100%;
     background-color: #f8f8ff;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -43,7 +42,6 @@
       'js zero decimal equals';
     #js-logo {
       color: $btn-alt-color;
-      font-size: 1.5rem;
       justify-self: center;
       align-self: center;
       grid-area: js;
@@ -109,7 +107,7 @@
 
 @media screen and (min-width: 768px) {
   .calculator {
-    width: 80%;
+    width: 70%;
     &__screen {
       &__output-previous {
         font-size: 2.6rem;
@@ -125,7 +123,7 @@
 
 @media screen and (min-width: 1024px) {
   .calculator {
-    width: 21%;
+    width: 60%;
     &__screen {
       &__output-previous {
         font-size: 2rem;
