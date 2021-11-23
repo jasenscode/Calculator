@@ -25,5 +25,11 @@ The majority of the time was spent writing the calculator logic and on the last 
 
 Being the first solo project I've worked on initially it was quite overwhelming, however, my approach was to first write down each step a user would make on the calculator and then what my logic would need to do at each step. This helped me to break down a seemingly large project into smaller chunks that I could focus on getting to work before I moved onto the next step. This can be seen through the comments throughout my code, which will allow anyone looking at it to see what is happening at each stage.
  
+_____
+### Testing
 
+At a later stage I implemented end to end testing using Cypress. This was the first time covering this concept and using this testing tool but I found it really useful. Off the back of it, I implemented two fixes.
 
+* Firstly, when an operator button had been pressed, if the user wanted to select a new one they would need to clear the calculator and reinput the whole equation again. I rectified this by adding a condition to check if the operator variable already had a value each time an operator button was clicked. 
+
+* Secondly, if an operator button was pressed without the user having input a second number, it would display 'NaN' on the calculator display output meaning the user would need to clear everything. This now throws a console error advising that a number needs to be selected meaning that the equals function will not calculate anything until the user does so.
