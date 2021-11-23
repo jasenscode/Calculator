@@ -42,15 +42,11 @@ operatorBtns.forEach((button) => {
       console.error('You must type in a number');
     } else if (operator) {
       operator = button.value;
-      console.log(operator);
-      console.log(firstNumber);
       previousScreenOutput.innerHTML = `${firstNumber} ${operator}`;
       currentScreenOutput.innerHTML = '';
     } else {
       firstNumber = parseFloat(currentScreenOutput.innerHTML);
       operator = button.value;
-      console.log(operator);
-      console.log(firstNumber);
       previousScreenOutput.innerHTML = `${firstNumber} ${operator}`;
       currentScreenOutput.innerHTML = '';
     }
@@ -74,15 +70,19 @@ const calculateResult = () => {
 
 // Function for equals button click event listener to call on, which assigns the second number to a variable, stores the result of equation into a variable and updates display to show the answer to equation. This is done by calling the calculateResult function
 const finalOutput = () => {
-  secondNumber = parseFloat(currentScreenOutput.innerHTML);
-  previousScreenOutput.innerHTML = firstNumber + operator + secondNumber;
-  result = calculateResult();
-  if (result % 1 != 0) {
-    currentScreenOutput.innerHTML = result.toFixed(4);
-  } else if (result % 1 === 0) {
-    currentScreenOutput.innerHTML = result;
+  if (currentScreenOutput.innerHTML === '') {
+    console.error('You must type in a number');
   } else {
-    console.error('No operator selected');
+    secondNumber = parseFloat(currentScreenOutput.innerHTML);
+    previousScreenOutput.innerHTML = firstNumber + operator + secondNumber;
+    result = calculateResult();
+    if (result % 1 != 0) {
+      currentScreenOutput.innerHTML = result.toFixed(4);
+    } else if (result % 1 === 0) {
+      currentScreenOutput.innerHTML = result;
+    } else {
+      console.error('No operator selected');
+    }
   }
 };
 

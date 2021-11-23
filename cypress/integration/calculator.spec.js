@@ -86,3 +86,14 @@ it('should check that pressing two operators successively displays the second op
   // select the output element and the value is should contain
   cy.get('.calculator__screen__output-previous').should('contain', '/');
 });
+
+it('should check that if the equals button is pressed without the user inputting a second number the screen output will not change', () => {
+  cy.visit('http://127.0.0.1:54934/');
+  // we need to select the elements needed in our test
+  cy.get('#six').click();
+  cy.get('#multiply').click();
+  cy.get('#equals').click();
+  //   cy.get('#divide').click();
+  // select the output element and the value is should contain
+  cy.get('.calculator__screen__output-previous').should('contain', '6 x');
+});
