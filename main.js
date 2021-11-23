@@ -38,14 +38,21 @@ numberBtns.forEach((button) => {
 // Store first number input to into a variable, clear currentScreen and display on previousScreen. Also capture the value of the operator button that was pressed
 operatorBtns.forEach((button) => {
   button.addEventListener('click', () => {
-    if (currentScreenOutput.innerHTML === '') {
+    if (currentScreenOutput.innerHTML === '' && !firstNumber) {
       console.error('You must type in a number');
+    } else if (operator) {
+      operator = button.value;
+      console.log(operator);
+      console.log(firstNumber);
+      previousScreenOutput.innerHTML = `${firstNumber} ${operator}`;
+      currentScreenOutput.innerHTML = '';
     } else {
       firstNumber = parseFloat(currentScreenOutput.innerHTML);
       operator = button.value;
-      previousScreenOutput.innerHTML = firstNumber + operator;
+      console.log(operator);
+      console.log(firstNumber);
+      previousScreenOutput.innerHTML = `${firstNumber} ${operator}`;
       currentScreenOutput.innerHTML = '';
-      // operator = button.value;
     }
   });
 });

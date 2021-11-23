@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This is a simple calculator made using vanilla JavaScript that I built in the third week of the _nology bootcamp.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasenscode/Calculator.git"
+  },
+  "author": "Jasen Chawda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasenscode/Calculator/issues"
+  },
+  "homepage": "https://github.com/jasenscode/Calculator#readme",
+  "devDependencies": {
+    "cypress": "^9.0.0"
+  }
+}
