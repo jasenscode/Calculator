@@ -32,6 +32,6 @@ _____
 
 At a later stage I implemented end to end testing using Cypress. This was the first time covering this concept and using this testing tool but I found it really useful. Off the back of it, I implemented two fixes:
 
-* Firstly, when an operator button had been pressed, if the user wanted to select a new one they would need to clear the calculator and reinput the whole equation again. I rectified this by adding a condition to check if the operator variable already had a value each time an operator button was clicked and replace it if so. 
+* Firstly, when an operator button had been pressed, if the user wanted to select a new one before inputting a second number, they would need to clear the calculator and reinput the whole equation again. I rectified this by adding a condition to check if the operator variable already had a value each time an operator button was clicked and replace it if true. 
 
 * Secondly, if the equals button was pressed without the user having input a second number, it would display 'NaN' on the calculator display output meaning the user would need to clear everything. This now throws a console error advising that a number needs to be selected meaning that the equals function will not calculate anything until the user does so.
