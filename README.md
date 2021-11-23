@@ -2,6 +2,8 @@
 
 This is a simple calculator made using vanilla JavaScript that I built in the third week of the _nology bootcamp.
 
+The timeframe allowed to complete this project was one week.
+
 [Check the live demo here!](https://jasenscode.github.io/Calculator/)
 
 ![Calculator screenshot](https://github.com/jasenscode/Calculator/blob/main/assets/images/screenshot.JPG?raw=true)
