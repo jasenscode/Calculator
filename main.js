@@ -91,10 +91,10 @@ equalsBtn.addEventListener('click', finalOutput);
 
 // Click even listener to convert number to a percentage
 percentBtn.addEventListener('click', () => {
-  if (firstNumber != typeof Number) {
+  if (!firstNumber) {
     result = currentScreenOutput.innerHTML / 100;
     currentScreenOutput.innerHTML = result;
-  } else if (result === typeof Number) {
+  } else if (result) {
     result = result / 100;
     currentScreenOutput.innerHTML = result;
   }

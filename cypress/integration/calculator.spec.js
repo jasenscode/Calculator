@@ -96,4 +96,5 @@ it('should check that if the equals button is pressed without the user inputting
   //   cy.get('#divide').click();
   // select the output element and the value is should contain
   cy.get('.calculator__screen__output-previous').should('contain', '6 x');
+  cy.get('.calculator__screen__output-current').should('contain', '');
 });
