@@ -15,6 +15,7 @@ ____________
 - HTML5
 - Sass
 - JavaScript
+- Cypress
 
 _____
 ### About
